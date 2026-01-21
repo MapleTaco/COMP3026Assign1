@@ -1,5 +1,12 @@
 package com.dp.assign1;
 
+/*
+Student Name: Daniel Perusse
+Student ID: 200551990
+Student Email: 200551990@student.georgianc.on.ca
+COMP3026 - Application Security Programming
+*/
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

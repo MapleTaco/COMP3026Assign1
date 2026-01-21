@@ -4,6 +4,7 @@
 <!-- Student Name: Daniel Perusse
 	 Student ID: 200551990
 	 Student Email: 200551990@student.georgianc.on.ca
+	 COMP3026 - Application Security Programming
 	  -->
 <html>
 <head>
