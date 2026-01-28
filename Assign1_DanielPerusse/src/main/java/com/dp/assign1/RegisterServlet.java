@@ -23,6 +23,11 @@ public class RegisterServlet extends HttpServlet {
 	// add var for out data access object
 	private RegisterDao rtDao;
 	private static final long serialVersionUID = 1L;
+	
+	public void init() {
+		rtDao = new RegisterDao();
+	}
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -50,10 +55,10 @@ public class RegisterServlet extends HttpServlet {
 		String name = request.getParameter("name"); 
 		String address = request.getParameter("address");
 		String country = request.getParameter("country");
-		String postal_code = request.getParameter("postal_code");
+		String postal_code = request.getParameter("postal");
 		String email = request.getParameter("email");
 		String sex = request.getParameter("sex");
-		String[] language = request.getParameterValues("lanugage");
+		String[] language = request.getParameterValues("language");
 		String about = request.getParameter("about");
 		
 		RegisterForm rf = new RegisterForm();
@@ -67,6 +72,15 @@ public class RegisterServlet extends HttpServlet {
 		rf.setSex(sex);
 		rf.setLanguage(language);
 		rf.setAbout(about);
+		
+		try {
+			
+		//attempt to use our dao to push the form data to db
+		rtDao.registerForm(rf);
+		
+		} catch(Exception e) {
+			System.out.println(e);
+		}
 		
 	}
 
